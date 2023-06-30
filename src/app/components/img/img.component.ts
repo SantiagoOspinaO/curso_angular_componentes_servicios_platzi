@@ -12,7 +12,7 @@ export class ImgComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy
     @Input('img')
     set changeImg(newImg: string) {
         this.img = newImg;
-        console.log('change just img =>',  this.img);
+        // console.log('change just img =>',  this.img);
     }
     @Input() alt: string = '';
     @Output() loaded = new EventEmitter<string>()
@@ -23,21 +23,21 @@ export class ImgComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy
     constructor() { 
         // Before render
         // No poner cosas asyncronas
-        console.log('constructor', 'imgValue =>', this.img)
+        // console.log('constructor', 'imgValue =>', this.img)
     }
 
     ngOnChanges(changes: SimpleChanges): void {
         // Before render
         // Changes inputs
-        console.log('ngOnChanges', 'imgValue =>', this.img)
-        console.log('changes', changes)
+        // console.log('ngOnChanges', 'imgValue =>', this.img)
+        // console.log('changes', changes)
     }
 
     ngOnInit(): void {
         // Before render
         // Acá si podemos correr cosas asyncronas async - fetch
         // Solo se corre una vez
-        console.log('ngOnInit', 'imgValue =>', this.img)
+        // console.log('ngOnInit', 'imgValue =>', this.img)
         // this.counterFn = window.setInterval(() => {
         //     this.counter += 1
         //     console.log('run counter')
@@ -46,12 +46,12 @@ export class ImgComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy
 
     ngAfterViewInit(): void {
         // Corre despues de que todo se este renderizando
-        console.log('ngAfterViewInit')
+        // console.log('ngAfterViewInit')
     }
 
     ngOnDestroy(): void {
         // Cuando se elimina este componente
-        console.log('ngOnDestroy')
+        // console.log('ngOnDestroy')
         // window.clearInterval(this.counterFn);
     }
 
@@ -60,7 +60,7 @@ export class ImgComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy
     }
 
     imgLoaded() {
-        console.log('log hijo')
+        // console.log('log hijo')
         this.loaded.emit(this.img);
     }
 }
