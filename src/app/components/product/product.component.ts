@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { Product } from '../../models/product.model'
 
@@ -7,18 +7,15 @@ import { Product } from '../../models/product.model'
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss']
 })
-export class ProductComponent implements OnInit {
+export class ProductComponent {
 
+  // eslint-disable-next-line @angular-eslint/no-input-rename
   @Input('product') product!: Product;
   @Output() addedProduct = new EventEmitter<Product>();
   
   constructor() { }
 
-  ngOnInit(): void {
-  }
-
   onAddToCart() {
     this.addedProduct.emit(this.product);
   }
-
 }

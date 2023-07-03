@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter, OnChanges, AfterViewInit, OnDestroy, SimpleChanges, SimpleChange } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges, AfterViewInit, OnDestroy, SimpleChanges } from '@angular/core';
 
 @Component({
     selector: 'app-img',
@@ -9,6 +9,7 @@ export class ImgComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy
 
     img: string = '';
 
+    // eslint-disable-next-line @angular-eslint/no-input-rename
     @Input('img')
     set changeImg(newImg: string) {
         this.img = newImg;
@@ -26,6 +27,7 @@ export class ImgComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy
         // console.log('constructor', 'imgValue =>', this.img)
     }
 
+    // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
     ngOnChanges(changes: SimpleChanges): void {
         // Before render
         // Changes inputs
@@ -33,6 +35,7 @@ export class ImgComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy
         // console.log('changes', changes)
     }
 
+    // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
     ngOnInit(): void {
         // Before render
         // Acá si podemos correr cosas asyncronas async - fetch
@@ -44,11 +47,13 @@ export class ImgComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy
         // }, 1000); 
     }
 
+    // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
     ngAfterViewInit(): void {
         // Corre despues de que todo se este renderizando
         // console.log('ngAfterViewInit')
     }
 
+    // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
     ngOnDestroy(): void {
         // Cuando se elimina este componente
         // console.log('ngOnDestroy')
